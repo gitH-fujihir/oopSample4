@@ -12,7 +12,7 @@ public class ReceiptController {
 
     public void execute(BasicInformation basicInformation, List<PurchasedGoods> purchasedGoodsList){
         try {
-            IReceiptCreator creator = createReceiptCreator(basicInformation);
+            IReceiptCreator creator = getReceiptCreator(basicInformation);
 
             //header
             creator.createHeader(basicInformation);
@@ -29,7 +29,7 @@ public class ReceiptController {
 
     }
 
-    private IReceiptCreator createReceiptCreator(BasicInformation bi) throws Exception {
+    private IReceiptCreator getReceiptCreator(BasicInformation bi) throws Exception {
         IReceiptCreator creator = null;
         if(bi.getStoreName().equals(STORE_NM_ITAKO)){
             creator = new ReceiptCreatorItako();

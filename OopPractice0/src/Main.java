@@ -72,19 +72,19 @@ public class Main {
         return goodsList;
     }
 
-    private static String lineFormatGoodsRow(String orgStr, BigDecimal orgDec){
+    private static String lineFormatGoodsRow(String gName, BigDecimal gPrice){
         final int gNameLen = 20;
         final int gPirceLen = 6;
 
         int diffStrLen = 0;
-        for(char c : orgStr.toCharArray()){
+        for(char c : gName.toCharArray()){
             if(String.valueOf(c).getBytes().length > 1){
                 //全角の場合
                 diffStrLen++;
             }
         }
 
-        return String.format(" %-"+ (gNameLen - diffStrLen) +"s %" + gPirceLen + "d円 ",orgStr,orgDec.intValue());
+        return String.format(" %-"+ (gNameLen - diffStrLen) +"s %" + gPirceLen + "d円 ",gName,gPrice.intValue());
 
     }
 

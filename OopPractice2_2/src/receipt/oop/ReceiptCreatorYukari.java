@@ -44,50 +44,50 @@ public class ReceiptCreatorYukari implements IReceiptCreator{
         System.out.println(sdf.format(basicInformation.getPurchaseTime()));
     }
 
-    private String lineFormatGoodsRow(String orgStr, BigDecimal orgDec){
+    private String lineFormatGoodsRow(String gName, BigDecimal gPrice){
         final int gNameLen = 20;
         final int gPirceLen = 6;
 
         int diffStrLen = 0;
-        for(char c : orgStr.toCharArray()){
+        for(char c : gName.toCharArray()){
             if(String.valueOf(c).getBytes().length > 1){
                 //全角の場合
                 diffStrLen++;
             }
         }
 
-        return String.format(" %-"+ (gNameLen - diffStrLen) +"s %" + gPirceLen + "d円 ",orgStr,orgDec.intValue());
+        return String.format(" %-"+ (gNameLen - diffStrLen) +"s %" + gPirceLen + "d円 ",gName,gPrice.intValue());
 
     }
 
-    private String lineFormatGoodsRowYenSign(String orgStr, BigDecimal orgDec){
+    private String lineFormatGoodsRowYenSign(String gName, BigDecimal gPrice){
         final int gNameLen = 20;
         final int gPirceLen = 6;
 
         int diffStrLen = 0;
-        for(char c : orgStr.toCharArray()){
+        for(char c : gName.toCharArray()){
             if(String.valueOf(c).getBytes().length > 1){
                 //全角の場合
                 diffStrLen++;
             }
         }
 
-        return String.format(" %-"+ (gNameLen - diffStrLen) +"s \\%," + gPirceLen + "d ",orgStr,orgDec.intValue());
+        return String.format(" %-"+ (gNameLen - diffStrLen) +"s \\%," + gPirceLen + "d ",gName,gPrice.intValue());
     }
 
-    private String lineFormatGoodsRowNoSign(String orgStr, BigDecimal orgDec){
+    private String lineFormatGoodsRowNoSign(String gName, BigDecimal gPrice){
         final int gNameLen = 20;
         final int gPirceLen = 6;
 
         int diffStrLen = 0;
-        for(char c : orgStr.toCharArray()){
+        for(char c : gName.toCharArray()){
             if(String.valueOf(c).getBytes().length > 1){
                 //全角の場合
                 diffStrLen++;
             }
         }
 
-        return String.format(" %-"+ (gNameLen - diffStrLen) +"s  %," + gPirceLen + "d ",orgStr,orgDec.intValue());
+        return String.format(" %-"+ (gNameLen - diffStrLen) +"s  %," + gPirceLen + "d ",gName,gPrice.intValue());
     }
 
     private String lineFormatCentral(String orgStr){
