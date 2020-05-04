@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class FormatUtil {
     public String lineFormatGoodsRow(String orgStr, BigDecimal orgDec){
         final int gNameLen = 20;
-        final int gPirceLen = 6;
+        final int gPriceLen = 6;
 
         int diffStrLen = 0;
         for(char c : orgStr.toCharArray()){
@@ -15,13 +15,13 @@ public class FormatUtil {
             }
         }
 
-        return String.format(" %-"+ (gNameLen - diffStrLen) +"s %" + gPirceLen + "d円 ",orgStr,orgDec.intValue());
+        return String.format(" %-"+ (gNameLen - diffStrLen) +"s %" + gPriceLen + "d円 ",orgStr,orgDec.intValue());
 
     }
 
     public String lineFormatGoodsRowYenSign(String orgStr, BigDecimal orgDec){
         final int gNameLen = 20;
-        final int gPirceLen = 6;
+        final int gPriceLen = 6;
 
         int diffStrLen = 0;
         for(char c : orgStr.toCharArray()){
@@ -31,12 +31,12 @@ public class FormatUtil {
             }
         }
 
-        return String.format(" %-"+ (gNameLen - diffStrLen) +"s \\%," + gPirceLen + "d ",orgStr,orgDec.intValue());
+        return String.format(" %-"+ (gNameLen - diffStrLen) +"s \\%," + gPriceLen + "d ",orgStr,orgDec.intValue());
     }
 
     public String lineFormatGoodsRowNoSign(String orgStr, BigDecimal orgDec){
         final int gNameLen = 20;
-        final int gPirceLen = 6;
+        final int gPriceLen = 6;
 
         int diffStrLen = 0;
         for(char c : orgStr.toCharArray()){
@@ -46,10 +46,10 @@ public class FormatUtil {
             }
         }
 
-        return String.format(" %-"+ (gNameLen - diffStrLen) +"s  %," + gPirceLen + "d ",orgStr,orgDec.intValue());
+        return String.format(" %-"+ (gNameLen - diffStrLen) +"s  %," + gPriceLen + "d ",orgStr,orgDec.intValue());
     }
 
-    public String lineFormatCentral(String orgStr){
+    public String lineFormatCenter(String orgStr){
         final int strLen = 31;
 
         int diffStrLen = 0;

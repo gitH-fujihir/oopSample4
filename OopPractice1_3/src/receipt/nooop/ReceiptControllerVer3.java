@@ -29,7 +29,7 @@ public class ReceiptControllerVer3 {
 
     private void createHeader(BasicInformation basicInformation){
         System.out.println();
-        System.out.println(lineFormatCentral(basicInformation.getStoreName()));
+        System.out.println(lineFormatCenter(basicInformation.getStoreName()));
         if(basicInformation.getStoreName().equals(STORE_NM_ITAKO) ||
                 basicInformation.getStoreName().equals(STORE_NM_MAKI)){
             System.out.println(basicInformation.getBranchName());
@@ -112,7 +112,7 @@ public class ReceiptControllerVer3 {
 
     private String lineFormatGoodsRowYenSign(String gName, BigDecimal gPrice){
         final int gNameLen = 20;
-        final int gPirceLen = 6;
+        final int gPriceLen = 6;
 
         int diffStrLen = 0;
         for(char c : gName.toCharArray()){
@@ -122,12 +122,12 @@ public class ReceiptControllerVer3 {
             }
         }
 
-        return String.format(" %-"+ (gNameLen - diffStrLen) +"s \\%," + gPirceLen + "d ",gName,gPrice.intValue());
+        return String.format(" %-"+ (gNameLen - diffStrLen) +"s \\%," + gPriceLen + "d ",gName,gPrice.intValue());
     }
 
     private String lineFormatGoodsRowNoSign(String gName, BigDecimal gPrice){
         final int gNameLen = 20;
-        final int gPirceLen = 6;
+        final int gPriceLen = 6;
 
         int diffStrLen = 0;
         for(char c : gName.toCharArray()){
@@ -137,10 +137,10 @@ public class ReceiptControllerVer3 {
             }
         }
 
-        return String.format(" %-"+ (gNameLen - diffStrLen) +"s  %," + gPirceLen + "d ",gName,gPrice.intValue());
+        return String.format(" %-"+ (gNameLen - diffStrLen) +"s  %," + gPriceLen + "d ",gName,gPrice.intValue());
     }
 
-    private String lineFormatCentral(String orgStr){
+    private String lineFormatCenter(String orgStr){
         final int strLen = 31;
 
         int diffStrLen = 0;

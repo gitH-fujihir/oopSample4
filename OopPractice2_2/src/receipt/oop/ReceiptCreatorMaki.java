@@ -48,7 +48,7 @@ public class ReceiptCreatorMaki implements IReceiptCreator{
 
     private String lineFormatGoodsRow(String gName, BigDecimal gPrice){
         final int gNameLen = 20;
-        final int gPirceLen = 6;
+        final int gPriceLen = 6;
 
         int diffStrLen = 0;
         for(char c : gName.toCharArray()){
@@ -58,13 +58,13 @@ public class ReceiptCreatorMaki implements IReceiptCreator{
             }
         }
 
-        return String.format(" %-"+ (gNameLen - diffStrLen) +"s %" + gPirceLen + "d円 ",gName,gPrice.intValue());
+        return String.format(" %-"+ (gNameLen - diffStrLen) +"s %" + gPriceLen + "d円 ",gName,gPrice.intValue());
 
     }
 
     private String lineFormatGoodsRowYenSign(String gName, BigDecimal gPrice){
         final int gNameLen = 20;
-        final int gPirceLen = 6;
+        final int gPriceLen = 6;
 
         int diffStrLen = 0;
         for(char c : gName.toCharArray()){
@@ -74,12 +74,12 @@ public class ReceiptCreatorMaki implements IReceiptCreator{
             }
         }
 
-        return String.format(" %-"+ (gNameLen - diffStrLen) +"s \\%," + gPirceLen + "d ",gName,gPrice.intValue());
+        return String.format(" %-"+ (gNameLen - diffStrLen) +"s \\%," + gPriceLen + "d ",gName,gPrice.intValue());
     }
 
     private String lineFormatGoodsRowNoSign(String gName, BigDecimal gPrice){
         final int gNameLen = 20;
-        final int gPirceLen = 6;
+        final int gPriceLen = 6;
 
         int diffStrLen = 0;
         for(char c : gName.toCharArray()){
@@ -89,10 +89,10 @@ public class ReceiptCreatorMaki implements IReceiptCreator{
             }
         }
 
-        return String.format(" %-"+ (gNameLen - diffStrLen) +"s  %," + gPirceLen + "d ",gName,gPrice.intValue());
+        return String.format(" %-"+ (gNameLen - diffStrLen) +"s  %," + gPriceLen + "d ",gName,gPrice.intValue());
     }
 
-    private String lineFormatCentral(String orgStr){
+    private String lineFormatCenter(String orgStr){
         final int strLen = 31;
 
         int diffStrLen = 0;
