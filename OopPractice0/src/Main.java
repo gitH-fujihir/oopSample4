@@ -19,7 +19,7 @@ public class Main {
         //ここからがレシート処理
         //header
         System.out.println();
-        System.out.println(lineFormatCentral(basicInformation.getStoreName()));
+        System.out.println(lineFormatCenter(basicInformation.getStoreName()));
         System.out.println(basicInformation.getBranchName());
         System.out.println();
         System.out.println(HR);
@@ -74,7 +74,7 @@ public class Main {
 
     private static String lineFormatGoodsRow(String gName, BigDecimal gPrice){
         final int gNameLen = 20;
-        final int gPirceLen = 6;
+        final int gPriceLen = 6;
 
         int diffStrLen = 0;
         for(char c : gName.toCharArray()){
@@ -84,11 +84,11 @@ public class Main {
             }
         }
 
-        return String.format(" %-"+ (gNameLen - diffStrLen) +"s %" + gPirceLen + "d円 ",gName,gPrice.intValue());
+        return String.format(" %-"+ (gNameLen - diffStrLen) +"s %" + gPriceLen + "d円 ",gName,gPrice.intValue());
 
     }
 
-    private static String lineFormatCentral(String orgStr){
+    private static String lineFormatCenter(String orgStr){
         final int strLen = 31;
 
         int diffStrLen = 0;
